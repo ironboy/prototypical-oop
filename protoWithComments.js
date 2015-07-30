@@ -51,7 +51,7 @@ create({
   _otherProp3: 'zzz'
 });
 
-And we can create an instance like this
+And we can create an instance like this:
 
 create({
   _new: "Classname2",
