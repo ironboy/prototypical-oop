@@ -18,7 +18,7 @@
       for(var i in props){
         obj[i] = typeof props[i] == "object" ? multiCreate(props[i]) : props[i];
       }
-      props._extends && (classMem[props._class] = obj);
+      props._class && (classMem[props._class] = obj);
       return obj;
   }
 
