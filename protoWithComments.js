@@ -50,13 +50,13 @@ the basis of prototypical inheritance.
   forin: false
 */
 
-(function(){
+var create = (function(){
 
   // A memory for "classes" - objects we want to reuse as templates
   var classMem = {};
 
   // Create lets us create an object with another object as its prototype
-  function create(props){
+  function createOne(props){
       // If there is a property "_new" use it as an alias for "_extends"
       props._extends = props._extends || props._new;
       delete props._new;
@@ -66,7 +66,7 @@ the basis of prototypical inheritance.
       // Loop through all  properties, if there are sub-objects or arrays
       // send them to create too - via multiCreate
       for(var i in props){
-        obj[i] = typeof props[i] == "object" ? multiCreate(props[i]) : props[i];
+        obj[i] = typeof props[i] == "object" ? create(props[i]) : props[i];
       }
       // If the property "_class" is set theen store the object to classMem
       props._class && (classMem[props._class] = obj);
@@ -75,13 +75,12 @@ the basis of prototypical inheritance.
 
   // Create several object instances at once from an array of objects/properties
   // return an object if the input was an object, otherwise an array
-  function multiCreate(arrayOfObjects){
+  function create(arrayOfObjects){
     var aoo = arrayOfObjects, a = aoo instanceof Array ? aoo: [aoo];
-    var result = a.map(create);
+    var result = a.map(createOne);
     return aoo instanceof Array ? result : result[0];
   }
 
-  // Make multiCreate global under the alias "create"
-  window.create = multiCreate;
+  return create;
 
 })();
