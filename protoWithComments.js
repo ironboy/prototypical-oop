@@ -30,6 +30,37 @@ based on an old one - that will
 become its prototype. Thuse it unlocks
 the basis of prototypical inheritance.
 
+## Usage
+
+Now we can create a new "class" like this:
+
+create({
+  _class: "Classname",
+  _constructor: function(){
+    console.log("I will run when an instance is created!")
+  }
+  _otherProp1: 'xxx',
+  _otherProp2: 'yyy'
+});
+
+We can extend a "class" like this:
+
+create({
+  _class: "Classname2",
+  _extends: "Classname"
+  _otherProp3: 'zzz'
+});
+
+And we can create an instance like this
+
+create({
+  _new: "Classname2",
+  _otherProp1: "Cool"
+});
+
+Apart from creating instance this
+will call the _constructor if there is one
+
 */
 
 /* jshint 
