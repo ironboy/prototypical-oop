@@ -1,3 +1,12 @@
+/* jshint 
+  loopfunc: true,
+  trailing: true,
+  sub: true,
+  expr: true,
+  noarg: false,
+  forin: false
+*/
+
 // Create several new instances from some JSON
 // (a couple of humans, and a mammal)
 
