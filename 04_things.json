@@ -1,0 +1,20 @@
+[
+  {
+    "_new": "Human",
+    "name" : "Peter"
+  },
+  {
+    "_new": "Human",
+    "name" : "Marie",
+    "pets": [
+      {
+        "_new": "Mammal",
+        "name": "Garfield"
+      }
+    ]
+  },
+  {
+    "_new": "Mammal",
+    "name" : "Carl"
+  }
+]
