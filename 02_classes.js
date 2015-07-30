@@ -17,6 +17,9 @@ create({
 create({
   _class: "Mammal",
   _extends: "Animal",
+  _constructor: function(){
+    $('body').append('<p>I, ' + this.name + ', was created!</p>');
+  },
   name: "Ani Doe",
   warmblooded: true,
   talk: function(){

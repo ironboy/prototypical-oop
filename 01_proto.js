@@ -19,6 +19,7 @@ var create = (function(){
         obj[i] = typeof props[i] == "object" ? create(props[i]) : props[i];
       }
       props._class && (classMem[props._class] = obj);
+      !props._class && obj._constructor && obj._constructor();
       return obj;
   }
 

@@ -68,8 +68,10 @@ var create = (function(){
       for(var i in props){
         obj[i] = typeof props[i] == "object" ? create(props[i]) : props[i];
       }
-      // If the property "_class" is set theen store the object to classMem
+      // If the property "_class" is set then store the object to classMem
       props._class && (classMem[props._class] = obj);
+      // If we don't hav the property class and we have a constructor, then run it
+      !props._class && obj._constructor && obj._constructor();
       return obj;
   }
 
