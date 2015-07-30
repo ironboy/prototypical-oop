@@ -14,7 +14,7 @@ create({
   alive: true
 });
 
-var b = create({
+create({
   _class: "Mammal",
   _extends: "Animal",
   name: "Ani Doe",
