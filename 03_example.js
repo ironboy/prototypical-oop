@@ -24,7 +24,7 @@ var instances;
 // Load the JSON
 $.ajax({url: "04_things.json", dataType: "json", success: classify});
 
-// Typecast the JSON as objects of the correct "class"/type
+// Type cast the JSON as objects of the correct "class"/type
 // thus inheriting methods and extra properties
 function classify(data){
   instances = create(data);
